@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@drawable/list_item_background"
+    >
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/dark_blue"
+        android:contentDescription="@string/nav_app_bar_navigate_up_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/item_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Name"
+        android:textColor="@color/dark_blue"
+        android:textSize="24dp"
+         />
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_toRightOf="@id/item_image"
+        android:layout_below="@id/item_name"
+        android:text="Price : "
+        android:textColor="@color/dark_blue"
+        android:textSize="22dp"
+        android:layout_marginLeft="5dp"
+        />
+
+    <TextView
+        android:id="@+id/item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_below="@id/item_name"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/item_image"
+        android:text="Count :"
+        android:textColor="@color/dark_blue"
+        android:textSize="22dp"
+         />
+
+    <TextView
+        android:id="@+id/item_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_below="@+id/item_count"
+        android:layout_toRightOf="@id/item_image"
+        android:text="TotalPrice :"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/dark_blue"
+        android:textSize="26dp"
+         />
+
+    <TextView
+        android:id="@+id/item_path"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="path"
+         />
+
+
+</RelativeLayout>

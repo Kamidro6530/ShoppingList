@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.shoppinglist.auth.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        tools:layout="@layout/fragment_registration"
+
+        android:name="com.example.shoppinglist.auth.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.shoppinglist.list.ListFragment"
+        tools:layout="@layout/fragment_list"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.example.shoppinglist.list.DeleteFragment"
+        android:label="DeleteFragment"
+        tools:layout="@layout/fragment_delete">
+        <action
+            android:id="@+id/action_deleteFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>

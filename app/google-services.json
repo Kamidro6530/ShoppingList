@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "258673190290",
+    "firebase_url": "https://shoplist-f4fba.firebaseio.com",
+    "project_id": "shoplist-f4fba",
+    "storage_bucket": "shoplist-f4fba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258673190290:android:50230c1f4c5d0cbf740d4b",
+        "android_client_info": {
+          "package_name": "com.example.shoppinglist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258673190290-df1d5vvsfobpmr4tma22qosu7prpdtml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeUvKEgHwV1eZRSQ8m1I1jhvfyFr-Okm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258673190290-df1d5vvsfobpmr4tma22qosu7prpdtml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
