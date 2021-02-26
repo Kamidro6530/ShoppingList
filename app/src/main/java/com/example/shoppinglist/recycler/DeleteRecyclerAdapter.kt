@@ -8,6 +8,7 @@ import android.widget.CompoundButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.shoppinglist.R
 import com.example.shoppinglist.database.ShopItem
 
@@ -37,7 +38,11 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
     }
 
     override fun onBindViewHolder(holder: MyDeleteHolder, position: Int) {
-        // Picasso.get().load(list[position].image).into(holder.image)
+        holder.itemView.apply {
+            Glide.with(context).load(list[position].image).into(holder.image)
+            holder.image.scaleType = ImageView.ScaleType.FIT_XY
+        }
+
         holder.name.text = list[position].name
         holder.count.text ="${holder.count.text}  ${ list[position].count?.toFloat()}"
         holder.price.text =  "${holder.price.text}  ${ list[position].price.toString()}"

@@ -10,8 +10,12 @@ object RetrofitClient {
         var retrofit = Retrofit.Builder()
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://pixabay.com/api/")
+            .baseUrl("https://pixabay.com/")
             .build()
 
+
+
+        retrofit.create(PixabayService::class.java)
     }
+
 }

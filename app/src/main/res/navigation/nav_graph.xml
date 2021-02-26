@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/listFragment">
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.shoppinglist.auth.LoginFragment"
@@ -30,10 +31,18 @@
         android:id="@+id/listFragment"
         android:name="com.example.shoppinglist.list.ListFragment"
         tools:layout="@layout/fragment_list"
-        android:label="ListFragment" >
+        android:label="ListFragment"
+        app:startDestination="@id/action_listFragment_to_createItemFragment">
         <action
             android:id="@+id/action_listFragment_to_deleteFragment"
             app:destination="@id/deleteFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_createItemFragment"
+            app:destination="@id/createItemFragment" >
+            <action
+                android:id="@+id/action_action_listFragment_to_createItemFragment_to_createItemFragment"
+                app:destination="@id/createItemFragment" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/deleteFragment"
@@ -43,5 +52,28 @@
         <action
             android:id="@+id/action_deleteFragment_to_listFragment"
             app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createItemFragment"
+        android:name="com.example.shoppinglist.dialog.CreateItemFragment"
+        android:label="CreateItemFragment"
+        tools:layout="@layout/fragment_create_item">
+        <action
+            android:id="@+id/action_createItemFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_createItemFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.shoppinglist.dialog.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" >
+        <action
+            android:id="@+id/action_imageFragment_to_createItemFragment"
+            app:destination="@id/createItemFragment"/>
+
+
     </fragment>
 </navigation>

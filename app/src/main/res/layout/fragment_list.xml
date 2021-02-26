@@ -115,6 +115,8 @@
                 android:layout_marginRight="28dp"
                 android:layout_marginBottom="8dp"
                 android:text="0"
+                android:maxLines="1"
+                android:maxLength="4"
                 android:textColor="@color/background"
                 android:textSize="26dp" />
         </RelativeLayout>

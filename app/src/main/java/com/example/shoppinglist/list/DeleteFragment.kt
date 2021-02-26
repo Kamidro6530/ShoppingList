@@ -1,13 +1,10 @@
 package com.example.shoppinglist.list
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.compose.ui.graphics.vector.addPathNodes
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
@@ -15,14 +12,10 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shoppinglist.R
-import com.example.shoppinglist.database.ShopItem
-import com.example.shoppinglist.dialog.ItemDialog
 import com.example.shoppinglist.mvvm.ListViewModel
 import com.example.shoppinglist.recycler.DeleteRecyclerAdapter
-import com.example.shoppinglist.recycler.RecyclerAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_delete.*
-import kotlinx.android.synthetic.main.fragment_list.*
 
 
 class DeleteFragment : Fragment() {

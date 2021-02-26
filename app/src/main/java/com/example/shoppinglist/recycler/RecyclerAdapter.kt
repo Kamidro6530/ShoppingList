@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.shoppinglist.R
 import com.example.shoppinglist.database.ShopItem
 import com.squareup.picasso.Picasso
@@ -25,12 +26,16 @@ class RecyclerAdapter(var list : ArrayList<ShopItem>) : RecyclerView.Adapter<MyH
     }
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
-       // Picasso.get().load(list[position].image).into(holder.image)
-        holder.name.text = list[position].name
-        holder.count.text ="${holder.count.text}  ${ list[position].count?.toFloat()}"
-        holder.price.text =  "${holder.price.text}  ${ list[position].price.toString()}"
-         var totalprice = (list[position].count?.toFloat())!! * (list[position].price?.toFloat())!!
-       holder.totalPrice.text = "${holder.totalPrice.text}  $totalprice"
+        holder.image.scaleType = ImageView.ScaleType.FIT_XY
+        holder.itemView.apply {
+            Glide.with(context).load(list[position].image).into(holder.image)
+            holder.name.text = list[position].name
+            holder.count.text ="${holder.count.text}  ${ list[position].count?.toFloat()}"
+            holder.price.text =  "${holder.price.text}  ${ list[position].price.toString()}"
+            var totalprice = (list[position].count?.toFloat())!! * (list[position].price?.toFloat())!!
+            holder.totalPrice.text = "${holder.totalPrice.text}  $totalprice"
+        }
+
 
     }
 

@@ -1,5 +1,7 @@
 package com.example.shoppinglist.database
 
+
+//Shop item object
 data class ShopItem(
 val name: String? = null,
 val path : String? = null,
