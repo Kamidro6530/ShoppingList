@@ -19,7 +19,8 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
     var checked_list = ArrayList<ShopItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyDeleteHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.delete_list_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.delete_list_item, parent, false)
         return MyDeleteHolder(view)
     }
 
@@ -32,6 +33,7 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
         checked_list.add(list[position])
         return checked_list
     }
+
     fun removeCheckedItem(position: Int): ArrayList<ShopItem> {
         checked_list.remove(list[position])
         return checked_list
@@ -44,8 +46,8 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
         }
 
         holder.name.text = list[position].name
-        holder.count.text ="${holder.count.text}  ${ list[position].count?.toFloat()}"
-        holder.price.text =  "${holder.price.text}  ${ list[position].price.toString()}"
+        holder.count.text = "${holder.count.text}  ${list[position].count?.toFloat()}"
+        holder.price.text = "${holder.price.text}  ${list[position].price.toString()}"
         var totalprice = (list[position].count?.toFloat())!! * (list[position].price?.toFloat())!!
         holder.totalPrice.text = "${holder.totalPrice.text}  $totalprice"
         holder.path.text = list[position].path
@@ -53,10 +55,10 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
         holder.checkbox.setOnCheckedChangeListener(object : CompoundButton.OnCheckedChangeListener {
             override fun onCheckedChanged(p0: CompoundButton?, p1: Boolean) {
 
-                if (holder.checkbox.isChecked){
+                if (holder.checkbox.isChecked) {
                     holder.itemView.setBackgroundResource(R.drawable.delete_list_item_background)
                     addCheckedItem(position)
-                }else{
+                } else {
                     holder.itemView.setBackgroundResource(R.drawable.list_item_background)
                     removeCheckedItem(position)
 
@@ -71,7 +73,7 @@ class DeleteRecyclerAdapter(var list: ArrayList<ShopItem>) :
 }
 
 class MyDeleteHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var image = view.findViewById<ImageView>(R.id.delete_item_image)
+    var image: ImageView = view.findViewById<ImageView>(R.id.delete_item_image)
     var name = view.findViewById<TextView>(R.id.delete_item_name)
     var count = view.findViewById<TextView>(R.id.delete_item_count)
     var price = view.findViewById<TextView>(R.id.delete_item_price)
